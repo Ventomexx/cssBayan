@@ -2,17 +2,16 @@
   box-sizing: border-box;
   font-size: 1.6rem;
   line-height: 2rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
 }
 html {
   scroll-behavior: smooth;
-  font-size: 10px; 
+  font-size: 10px;
 }
 body {
   font-weight: 400;
-  min-height: 80vh;
   padding: 0;
   background-color: rgba(0, 162, 255, 0.521);
 }
@@ -23,24 +22,38 @@ body {
 }
 h1 {
   margin: 0 auto;
-  padding: 10% 0;
-  text-align: center;
+  padding: 5%;
+  font-size: 4rem;
+  border-bottom: solid 1px gray;
 }
 .accordeon {
-  margin: 0 30%;
+  display: flex;
+  justify-content: center;
+  padding: 5% 0;
 }
-.accordeon__item {
-  font-size:1.6rem;
-  max-height:2rem;
-  overflow:hidden;
+.accordeon__image {
+  max-height: 0;
   transition: max-height 0.3s ease-in-out;
 }
-.accordeon__item:hover{
-  height:auto;
-  max-height:30vh;
+input[type='radio']:checked .accordeon__image {
+  max-height: 30vh;
+  transition: max-height 0.6s ease-in-out;
+}
+.accordeon__item {
+  width: 100vh;
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+.accordeon__item:hover .accordeon__image {
+  max-height: 30vh;
   transition: max-height 0.6s ease-in-out;
 }
 img {
-  height: 20vh;
+  height: 30vh;
 }
-
+/* input[type='radio'] {
+  display: none;
+} */
+input[type="radio"]:checked + label + .accordeon__image {
+  max-height: 30vh;
+}
