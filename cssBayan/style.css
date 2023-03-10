@@ -1,16 +1,15 @@
 * {
   box-sizing: border-box;
-  font-size: 1.6rem;
-  line-height: 2rem;
-  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
 }
 html {
   scroll-behavior: smooth;
-  font-size: 10px;
 }
 body {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   padding: 0;
   background-color: rgba(0, 162, 255, 0.521);
@@ -18,21 +17,23 @@ body {
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
-  background-color: sandybrown;
+  background-color: rgb(252, 216, 184);
+}
+header {
+  width: 100%;
+  height: 30vh;
+  min-height: 220px;  
+  padding: 20px;
 }
 h1 {
   margin: 0 auto;
-  padding: 5%;
-  font-size: 4rem;
   border-bottom: solid 1px gray;
 }
 .accordeon {
-  display: flex;
-  justify-content: center;
-  padding: 5% 0;
+
 }
 .accordeon__image {
-  max-height: 0;
+  max-height: 2rem;
   transition: max-height 0.3s ease-in-out;
 }
 input[type='radio']:checked .accordeon__image {
@@ -40,7 +41,7 @@ input[type='radio']:checked .accordeon__image {
   transition: max-height 0.6s ease-in-out;
 }
 .accordeon__item {
-  width: 100vh;
+  width: 100%;
   font-size: 1.6rem;
   overflow: hidden;
 }
@@ -51,9 +52,26 @@ input[type='radio']:checked .accordeon__image {
 img {
   height: 30vh;
 }
-/* input[type='radio'] {
+input[type='radio'] {
   display: none;
-} */
-input[type="radio"]:checked + label + .accordeon__image {
-  max-height: 30vh;
 }
+input[type="radio"]:checked + .accordeon__image {
+  max-height: 80vh;
+}
+label {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+.accordeon__item:hover .ico {
+  display: none;
+}
+/* .flex-container > div {
+} */
+/* .ico {
+
+} */
