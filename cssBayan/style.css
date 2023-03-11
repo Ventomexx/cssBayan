@@ -2,14 +2,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Bangers', cursive;
 }
 html {
   scroll-behavior: smooth;
+  font-size: 20px;
 }
 body {
   font-size: 1.6rem;
-  line-height: 2rem;
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
   padding: 0;
   background-color: rgba(0, 162, 255, 0.521);
@@ -22,37 +22,45 @@ body {
 header {
   width: 100%;
   height: 30vh;
-  min-height: 220px;  
+  min-height: 220px;
   padding: 20px;
 }
 h1 {
   margin: 0 auto;
   border-bottom: solid 1px gray;
 }
-.accordeon {
-
+main {
+  min-height: 100%;
 }
+/* .accordeon {
+
+} */
 .accordeon__image {
   max-height: 2rem;
   transition: max-height 0.3s ease-in-out;
 }
-input[type='radio']:checked .accordeon__image {
+input[type="radio"]:checked .accordeon__image {
   max-height: 30vh;
   transition: max-height 0.6s ease-in-out;
 }
 .accordeon__item {
   width: 100%;
-  font-size: 1.6rem;
   overflow: hidden;
 }
 .accordeon__item:hover .accordeon__image {
-  max-height: 30vh;
+  max-height: 35vh;
   transition: max-height 0.6s ease-in-out;
 }
 img {
   height: 30vh;
 }
-input[type='radio'] {
+.ico {
+  background-image: url(./assets/beer-empty.svg);
+  background-size: 2rem;
+  background-repeat: no-repeat;
+  width: 2rem;
+}
+input[type="radio"] {
   display: none;
 }
 input[type="radio"]:checked + .accordeon__image {
@@ -66,10 +74,22 @@ label {
 .flex-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+.accordeon__image_mem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .accordeon__item:hover .ico {
   display: none;
 }
+input[type="radio"]:checked + .accordeon__image .ico {
+  background-image: url(./assets/beer-full.svg);
+}
+
 /* .flex-container > div {
 } */
 /* .ico {
