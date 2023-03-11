@@ -2,8 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Bangers', cursive;
-  color: #2E2E2E;
+  font-family: "Bangers", cursive;
+  color: #2e2e2e;
 }
 html {
   scroll-behavior: smooth;
@@ -18,7 +18,7 @@ body {
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
-  background-color: #FFE699;
+  background-color: #ffe699;
 }
 header {
   width: 100%;
@@ -95,11 +95,24 @@ input[type="radio"]:checked + .accordeon__image .ico {
   background-image: url(./assets/beer-full.svg);
 }
 input[type="radio"]:checked + .accordeon__image .accordeon__text {
-  color: #2E2E2E;
+  color: #2e2e2e;
 }
 .accordeon__form:hover .accordeon__text {
-  color: #2E2E2E;
+  color: #2e2e2e;
 }
 .accordeon__item:hover .ico {
   background-image: url(./assets/beer-full.svg);
+}
+.accordeon__item:active {
+  opacity: 0.8;
+}
+.accordeon__item:active .accordeon__text {
+  color: #006699;
+}
+.accordeon__item:active .ico {
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+}
+img {
+  transform: scale(1);
+  transition: transform 0.5s ease;
 }
