@@ -7,7 +7,6 @@
 }
 html {
   scroll-behavior: smooth;
-  /* font-size: 10px; */
 }
 body {
   font-size: 0.5rem;
@@ -53,13 +52,15 @@ border: none;
 }
 img {
   height: 30vh;
+  max-width: 75vw;
+  object-fit: contain;
 }
 .ico {
   background-image: url(./assets/beer-empty.svg);
   background-size: 0.5rem;
   background-repeat: no-repeat;
   width: 0.5rem;
-  display: none;
+  display: inline-block;
 }
 input[type="radio"] {
   display: none;
@@ -103,33 +104,48 @@ input[type="radio"]:checked + .accordeon__image .accordeon__image_mem {
 }
 .accordeon__item:active .ico {
   filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
-}
-/* HOver */
-.accordeon__item:hover .accordeon__image {
-  max-height: 35vh;
-  transition: max-height 0.6s ease-in-out;
-}
-.accordeon__item:hover .accordeon__image_mem {
-  transform: scale(1);
-}
-.accordeon__form:hover .ico {
-  display: inline-block;
-}
-.accordeon__form:hover .accordeon__text {
-  color: #2e2e2e;
-}
-.accordeon__item:hover .ico {
   background-image: url(./assets/beer-full.svg);
 }
 
-/* desktop */
-/* body {
-  font-size: 1.6rem;
-} */
-/* .ico {
+@media (min-width: 768px) {
+  body {
+    font-size: 1.2rem;
+  }
+  .ico {
+  background-size: 1.2rem;
+  width: 1.2rem;
+  }
+  .accordeon__image {
+  max-height: 1.8rem;
+  }
+}
+@media (min-width: 860px) {
+  body {
+    font-size: 2rem;
+  }
+  .ico {
   background-size: 2rem;
   width: 2rem;
-} */
-/* .accordeon__image {
-  max-height: 2rem;
-} */
+  display: none;
+  }
+  .accordeon__image {
+  max-height: 3rem;
+  }
+  /* HOver */
+  .accordeon__item:hover .accordeon__image {
+    max-height: 35vh;
+    transition: max-height 0.6s ease-in-out;
+  }
+  .accordeon__item:hover .accordeon__image_mem {
+    transform: scale(1);
+  }
+  .accordeon__form:hover .ico {
+    display: inline-block;
+  }
+  .accordeon__form:hover .accordeon__text {
+    color: #2e2e2e;
+  }
+  .accordeon__item:hover .ico {
+    background-image: url(./assets/beer-full.svg);
+  }
+}
